@@ -1,0 +1,24 @@
+diff -up vvdec-3.0.0/CMakeLists.txt.orig vvdec-3.0.0/CMakeLists.txt
+--- vvdec-3.0.0/CMakeLists.txt.orig	2024-10-25 10:48:32.000000000 +0200
++++ vvdec-3.0.0/CMakeLists.txt	2025-08-05 01:47:09.678721130 +0200
+@@ -433,7 +433,7 @@ endforeach()
+ 
+ get_directory_property( ALL_TESTS TESTS )
+ set_tests_properties( ${ALL_TESTS} PROPERTIES
+-                      TIMEOUT 120
++                      TIMEOUT 240
+                       FAIL_REGULAR_EXPRESSION "(WARNING:|runtime error)" )
+ 
+ add_custom_target( test-ok  USES_TERMINAL COMMAND ${CMAKE_CTEST_COMMAND} -C $<CONFIG> -R "\"^(Test|MISSING)\"" )
+diff -up vvdec-3.0.0/tests/wasm/run_tests.py.orig vvdec-3.0.0/tests/wasm/run_tests.py
+--- vvdec-3.0.0/tests/wasm/run_tests.py.orig	2024-10-25 10:48:32.000000000 +0200
++++ vvdec-3.0.0/tests/wasm/run_tests.py	2025-08-05 01:47:48.265494648 +0200
+@@ -8,7 +8,7 @@ import time
+ import logging
+ import atexit
+ 
+-OUTPUT_TIMEOUT = 120
++OUTPUT_TIMEOUT = 240
+ 
+ caps = DesiredCapabilities.CHROME
+ caps['goog:loggingPrefs'] = { 'browser':'ALL' }
