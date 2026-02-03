@@ -63,6 +63,7 @@ tar -xf %{SOURCE1} -C  ./ext/bitstreams
                 -G Ninja \
                 -DCMAKE_BUILD_TYPE=RelWithDebInfo \
                 -DVVDEC_ENABLE_LINK_TIME_OPT=ON \
+                -DVVDEC_ENABLE_WERROR=OFF \
                 -DVVDEC_INSTALL_VVDECAPP=ON \
                 -DCMAKE_SKIP_INSTALL_RPATH=1 \
                 -DVVDEC_TESTS_DEBUGGER_COMMAND:STRING=""
