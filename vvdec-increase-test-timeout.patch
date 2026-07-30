@@ -1,7 +1,7 @@
-diff -up vvdec-3.0.0/CMakeLists.txt.orig vvdec-3.0.0/CMakeLists.txt
---- vvdec-3.0.0/CMakeLists.txt.orig	2024-10-25 10:48:32.000000000 +0200
-+++ vvdec-3.0.0/CMakeLists.txt	2025-08-05 01:47:09.678721130 +0200
-@@ -433,7 +433,7 @@ endforeach()
+diff -uNrp a/CMakeLists.txt b/CMakeLists.txt
+--- a/CMakeLists.txt	2026-07-28 10:46:55.000000000 +0100
++++ b/CMakeLists.txt	2026-07-30 09:37:15.966045698 +0100
+@@ -578,7 +578,7 @@ endforeach()
  
  get_directory_property( ALL_TESTS TESTS )
  set_tests_properties( ${ALL_TESTS} PROPERTIES
@@ -9,10 +9,10 @@ diff -up vvdec-3.0.0/CMakeLists.txt.orig vvdec-3.0.0/CMakeLists.txt
 +                      TIMEOUT 240
                        FAIL_REGULAR_EXPRESSION "(WARNING:|runtime error)" )
  
- add_custom_target( test-ok  USES_TERMINAL COMMAND ${CMAKE_CTEST_COMMAND} -C $<CONFIG> -R "\"^(Test|MISSING)\"" )
-diff -up vvdec-3.0.0/tests/wasm/run_tests.py.orig vvdec-3.0.0/tests/wasm/run_tests.py
---- vvdec-3.0.0/tests/wasm/run_tests.py.orig	2024-10-25 10:48:32.000000000 +0200
-+++ vvdec-3.0.0/tests/wasm/run_tests.py	2025-08-05 01:47:48.265494648 +0200
+ add_custom_target( run_tests USES_TERMINAL COMMAND ${CMAKE_CTEST_COMMAND} -C $<CONFIG> )
+diff -uNrp a/tests/wasm/run_tests.py b/tests/wasm/run_tests.py
+--- a/tests/wasm/run_tests.py	2026-07-28 10:46:55.000000000 +0100
++++ b/tests/wasm/run_tests.py	2026-07-30 09:37:51.790127053 +0100
 @@ -8,7 +8,7 @@ import time
  import logging
  import atexit

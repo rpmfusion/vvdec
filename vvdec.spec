@@ -1,5 +1,5 @@
 %global forgeurl0 https://github.com/fraunhoferhhi/vvdec
-Version: 3.0.0
+Version: 3.2.0
 %global tag0 v%{version}
 
 %forgemeta
@@ -55,8 +55,7 @@ The vvdec-libs package contains the library files
 #sanitize thirdparty
 rm -rf ./thirdparty
 #prepare test data
-mkdir -p ext/bitstreams
-tar -xf %{SOURCE1} -C  ./ext/bitstreams
+tar -xf %{SOURCE1}
 
 %build
 %cmake \
